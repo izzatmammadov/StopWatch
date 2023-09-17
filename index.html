@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWacth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-container">
+        <div class="inner-container">
+          <div class="clock">
+            <p id="message">Half Hour</p>
+            <div id="watch">
+              <span id="min">00</span>
+              <span>:</span>
+              <span id="sec">00</span>
+              <span>:</span>
+              <span id="msec">00</span>
+            </div>
+            <div class="button_group">
+              <button id="startBtn">Start</button>
+              <button id="stopBtn">Stop</button>
+              <button id="resetBtn">Reset</button>
+              <button id="lapBtn">Lap</button>
+            </div>
+            <hr />
+            <ul class="lap_list" id="lapContent"></ul>
+          </div>
+        </div>
+      </main>
+    <script src="variables.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
