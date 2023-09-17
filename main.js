@@ -28,7 +28,7 @@ startBtn.addEventListener("click", function () {
       sec++;
       sec = sec < 10 ? "0" + sec : sec;
       ms = "0" + 0;
-    } else if (sec == 2) {
+    } else if (sec == 60) {
       min++;
       min = min < 10 ? "0" + min : min;
       sec = "0" + 0;
