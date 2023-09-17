@@ -1,120 +1,144 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none !important;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: intro;
-    scroll-behavior: smooth;
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-  
-    ::-webkit-scrollbar-track {
-      background: #888;
-    }
-  
-    ::-webkit-scrollbar-thumb {
-      background: #fff;
-      border-radius: 8px;
-    }
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: Poppins-Medium;
+  ::-webkit-scrollbar {
+    width: 5px;
   }
-  
-  .main-container {
-    background: linear-gradient(45deg, #08001f, #30197d);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    color: #fff;
+
+  ::-webkit-scrollbar-track {
+    background: #888;
   }
-  
-  .inner-container {
-    width: 50%;
-  }
-  
-  .clock {
-    margin: 80px auto;
-    padding: 20px 0px;
-    background: rgba(235, 0, 255, 0.11);
-    width: 100%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #watch {
-    font-size: 100px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .button_group {
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-  }
-  
-  .button_group button {
-    background: transparent;
-    border: 1px solid;
-    color: #fff;
-    padding: 8px 20px;
-    border-radius: 4px;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .button_group button:hover {
-    transition: all 0.3s;
+
+  ::-webkit-scrollbar-thumb {
     background: #fff;
-    color: #390e70;
-  }
-  
-  .clock hr {
-    margin: 20px auto;
-    width: 90%;
-  }
-  
-  .lap_list {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow-y: auto;
-    max-height: 328px;
-  }
-  
-  .lap {
-    background: #30197d4a;
-    font-size: 28px;
-    padding: 12px;
     border-radius: 8px;
   }
-  
-  #message {
-    display: none;
-    background-color: #f0dc4e;
-    color: #390e70;
-    text-align: center;
-    padding: 10px 40px;
-    border-radius: 8px;
-    font-size: 22px;
-    letter-spacing: 5px;
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(./fonts/Poppins-Medium.ttf);
+}
+
+.main-container {
+  background: linear-gradient(45deg, #08001f, #30197d);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+.inner-container {
+  width: 50%;
+}
+
+.clock {
+  margin: 50px auto;
+  padding: 20px 0px;
+  background: rgba(235, 0, 255, 0.11);
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#watch {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.button_group {
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.button_group button {
+  background: transparent;
+  border: 1px solid;
+  color: #fff;
+  padding: 8px 32px;
+  border-radius: 4px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button_group button:hover {
+  transition: all 0.3s;
+  background: #fff;
+  color: #390e70;
+}
+
+.clock hr {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.lap_list {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 328px;
+}
+
+.lap {
+  background: #30197d4a;
+  font-size: 28px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+#message {
+  display: none;
+  background-color: #f0dc4e;
+  color: #390e70;
+  text-align: center;
+  padding: 10px 40px;
+  border-radius: 8px;
+  font-size: 22px;
+  letter-spacing: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-container {
+    width: 100%;
   }
-  
-  @media only screen and (max-width: 600px) {
-    .main-container {
-      width: 100vh;
-    }
-  
-    .inner-container {
-      width: 80%;
-    }
+
+  .inner-container {
+    width: 80%;
   }
-    
+
+  .clock {
+    width: 100%;
+  }
+
+  #watch {
+    width: 100%;
+    font-size: 68px;
+  }
+
+  .button_group {
+    width: 100%;
+    gap: 0px;
+    padding: 0px 12px;
+  }
+
+  .button_group button {
+    font-size: 18px;
+    padding: 4px 12px;
+  }
+}
