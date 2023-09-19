@@ -1,5 +1,6 @@
+let lapArr = [];
 
-let min = (sec = ms = "0" + 0);
+let min = sec = ms = "0" + 0;
 
 function putValue() {
   minute.innerText = min;
@@ -41,7 +42,7 @@ startBtn.addEventListener("click", function () {
   }, 10);
   startBtn.disabled = true;
   stopBtn.disabled = false;
-  resetBtn.disabled = false;
+  resetBtn.disabled = true;
   lapBtn.disabled = false;
   startBtn.style.opacity = "0.5";
   startBtn.style.cursor = "not-allowed";
@@ -49,8 +50,8 @@ startBtn.addEventListener("click", function () {
   stopBtn.style.opacity = "1";
   stopBtn.style.cursor = "pointer";
 
-  resetBtn.style.opacity = "1";
-  resetBtn.style.cursor = "pointer";
+  resetBtn.style.opacity = "0.5";
+  resetBtn.style.cursor = "not-allowed";
 
   lapBtn.style.opacity = "1";
   lapBtn.style.cursor = "pointer";
@@ -59,6 +60,7 @@ startBtn.addEventListener("click", function () {
 stopBtn.addEventListener("click", function () {
   clearInterval(startTimer);
   startBtn.disabled = false;
+  resetBtn.disabled = false;
   stopBtn.style.opacity = "0.5";
   stopBtn.style.cursor = "not-allowed";
 
@@ -70,7 +72,8 @@ stopBtn.addEventListener("click", function () {
 });
 
 resetBtn.addEventListener("click", function () {
-  document.querySelector(".lap_list").style.height = "0px";
+  lapContent.innerHTML = "";
+  lapArr = []
   min = sec = ms = "0" + 0;
   putValue();
   startBtn.disabled = false;
@@ -84,10 +87,14 @@ resetBtn.addEventListener("click", function () {
 });
 
 lapBtn.addEventListener("click", function () {
-  const lapTime = `${min}:${sec}:${ms}`;
-  const lapItem = document.createElement("li");
-  lapItem.classList.add("lap");
-  const lapIndex = lapContent.children.length + 1;
-  lapItem.innerText = `${lapIndex}. ${lapTime}`;
-  lapContent.appendChild(lapItem);
+  lapArr.push(`${min}:${sec}:${ms}`);
+  lapRender();
 });
+
+function lapRender() {
+  lapContent.innerHTML = lapArr
+    .map((el, index) => {
+      return `<li class="lap">${index + 1}. ${el}</li>`;
+    })
+    .join("");
+}
